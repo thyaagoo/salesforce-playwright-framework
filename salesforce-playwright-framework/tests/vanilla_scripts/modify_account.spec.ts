@@ -14,6 +14,7 @@ test("Modify account - minimal vanilla flow", async ({ page }) => {
   //Click first row element
   await page.locator("//tbody[contains(@style,'counter-reset: row-number 0')]/tr[1]/td[6]").click()
   await page.locator("//ul[@class='scrollable' and @role='presentation']/li[1]").click()
+  //Update phone number and website
   await page.locator('input[name="Phone"][type="text"][class="slds-input"]').fill(updatedPhone)
   await page.locator('input[name="Website"][type="text"][class="slds-input"]').fill(updatedWebsite)
   await page.locator('button[name="SaveEdit"][type="button"]').click()

@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test.use({
-  storageState: "Data/SalesforceLogin.json",
-});
+      storageState: "Data/SalesforceLogin.json"
+})
 
 test("Delete account - minimal vanilla flow", async ({ page }) => {
   const uniqueSuffix = Date.now();

@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import accountsInputData from "../Data/accounts_data.json"
+import accountsInputData from "../../Data/accounts_data.json"
 
 test.use({
   storageState: "Data/SalesforceLogin.json",
