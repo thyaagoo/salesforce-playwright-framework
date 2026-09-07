@@ -1,17 +1,11 @@
-import { test } from "@playwright/test";
-import { AccountsPageClass } from "../pages/AccountsPage";
+import { test } from "../custom_fixture/salesforce.fixture";
 import { generateRandomPhone, generateRandomWebsite } from "../Utils/randomGenerators";
 
-test.use({
-  storageState: "Data/SalesforceLogin.json",
-});
-
-test("Modify account - POM flow with randomized data", async ({ page }) => {
-  const map = new AccountsPageClass(page);
-  await map.loadURL();
-  await map.clickAccountsModule();
-  await map.clickFirstRow();
-  await map.updatePhoneAndWebsite(generateRandomPhone(), generateRandomWebsite());
-  await map.clickSaveAccountBtn();
-  await map.assertAccountUpdated();
+test("Modify account - POM flow with randomized data", async ({ accountsPage }) => {
+  await accountsPage.loadURL();
+  await accountsPage.clickAccountsModule();
+  await accountsPage.clickFirstRow();
+  await accountsPage.updatePhoneAndWebsite(generateRandomPhone(), generateRandomWebsite());
+  await accountsPage.clickSaveAccountBtn();
+  await accountsPage.assertAccountUpdated();
 });
