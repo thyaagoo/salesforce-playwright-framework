@@ -12,7 +12,7 @@ const test = base.extend<SalesforceFixtures>({
 });
 
 test.use({
-    storageState: "../Data/SalesforceLogin.json",
+    storageState: "Data/SalesforceLogin.json",
 })
 
 export{test, expect};
