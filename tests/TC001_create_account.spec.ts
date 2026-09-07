@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { AccountsPage } from "../pages/AccountsPage";
+import { AccountsPageClass } from "../pages/AccountsPage";
 import accountsJSONInput from "../Data/create_account_data.json";
 
 test.use({
@@ -8,7 +8,7 @@ test.use({
 
 for (const account of accountsJSONInput) {
   test(`Create new account - ${account.accountName}`, async ({ page }) => {
-    const ap = new AccountsPage(page);
+    const ap = new AccountsPageClass(page);
     await ap.loadURL();
     await ap.clickAccountsModule();
     await ap.clickNewAccount();

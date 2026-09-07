@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { AccountsPage } from "../pages/AccountsPage";
+import { AccountsPageClass } from "../pages/AccountsPage";
 import { generateRandomPhone, generateRandomWebsite } from "../Utils/randomGenerators";
 
 test.use({
@@ -7,7 +7,7 @@ test.use({
 });
 
 test("Modify account - POM flow with randomized data", async ({ page }) => {
-  const map = new AccountsPage(page);
+  const map = new AccountsPageClass(page);
   await map.loadURL();
   await map.clickAccountsModule();
   await map.clickFirstRow();

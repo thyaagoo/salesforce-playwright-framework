@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { AccountsPage } from "../pages/AccountsPage";
+import { AccountsPageClass } from "../pages/AccountsPage";
 import { generateRandomPhone, generateRandomWebsite } from "../Utils/randomGenerators";
 
 test.use({
@@ -7,7 +7,7 @@ test.use({
 });
 
 test ('Accounts - negative test case', async ({page}) => {
-    const accNeg = new AccountsPage(page)
+    const accNeg = new AccountsPageClass(page)
     await accNeg.loadURL();
     await accNeg.clickAccountsModule();
     await accNeg.clickNewAccount();

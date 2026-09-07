@@ -33,7 +33,7 @@ type AccountData = {
   description: string;
 };
 
-export class AccountsPage extends HomePage {
+export class AccountsPageClass extends HomePage {
 
   async fillAccountForm(account: AccountData) {
     await this.Gpage.locator('input[class="slds-input"][name="Name"][part="input"]').fill(account.accountName);
