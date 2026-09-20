@@ -1,18 +1,27 @@
 import { Page } from "@playwright/test";
-import { selectors } from "./selectors";
 
 export class HomePage {
     Gpage: Page;
+
     constructor(Lpage: Page) {
         this.Gpage = Lpage;
     }
+
+    //Loading the url
     async loadURL() {
         await this.Gpage.goto("https://orgfarm-379ff19658-dev-ed.develop.lightning.force.com/lightning/page/home");
     }
+
+    //ACCOUNTS
     async clickAccountsModule() {
-        await this.Gpage.locator(selectors.home.accountsModuleLink).click();
+        await this.Gpage.locator("//a[@title='Accounts']/span[text()='Accounts']").click();
     }
     async clickNewAccount() {
-        await this.Gpage.locator(selectors.home.newAccountBtn).click();
+        await this.Gpage.locator("//a[@title='New']/div[@title='New']").click();
     }
+
+    //LEADS
+    async openLeadsPage() {
+        await this.Gpage.locator("//a[@title='Leads']/span[text()='Leads']").click();
+  }
 }

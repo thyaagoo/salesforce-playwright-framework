@@ -4,8 +4,8 @@ import accountsJSONInput from "../Data/create_account_data.json";
 const account = accountsJSONInput[0];
 
 test(`Create new account - ${account.accountName}`, async ({ accountsPage }) => {
-  await accountsPage.loadURL();
-  await accountsPage.clickAccountsModule();
+  await accountsPage.loadURL(); //loadURL is inherited from HomePage.ts
+  await accountsPage.clickAccountsModule(); //Inherited from HomePage.ts
   await accountsPage.clickNewAccount();
   await accountsPage.fillAccountForm(account);
   await accountsPage.clickSaveAccountBtn();
