@@ -92,4 +92,15 @@ export class LeadsPage extends HomePage {
   async assertLeadCreated() {
     await expect(this.Gpage.getByText("was created", { exact: false })).toBeVisible();
   }
+
+  // Below methods are specific to Delete account scenario
+  async deleteLead() {
+    await this.Gpage.locator("//span[text()='Show more actions']").click();
+    await this.Gpage.locator('runtime_platform_actions-action-renderer[title="Delete"][apiname="Delete"]').click();
+    await this.Gpage.locator("//div[contains(@class,'forceModalActionContainer--footerAction')]/button[@title='Delete']").click();
+  }
+
+  async assertLeadDeleted() {
+    await expect(this.Gpage.getByText("was deleted", { exact: false })).toBeVisible();
+  }
 }

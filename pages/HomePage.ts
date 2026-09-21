@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 
 export class HomePage {
-    Gpage: Page;
+    Gpage: Page; //Gpage of property type Page
 
     constructor(Lpage: Page) {
         this.Gpage = Lpage;
