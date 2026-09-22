@@ -7,7 +7,7 @@ export class HomePage {
         this.Gpage = Lpage;
     }
 
-    //Loading the url
+    //LOAD THE URL
     async loadURL() {
         await this.Gpage.goto("https://orgfarm-379ff19658-dev-ed.develop.lightning.force.com/lightning/page/home");
     }

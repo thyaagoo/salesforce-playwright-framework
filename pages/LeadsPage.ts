@@ -30,7 +30,7 @@ export type LeadData = {
   description: string;
 };
 
-export class LeadsPage extends HomePage {
+export class LeadsPageClass extends HomePage {
   async clickNewLead() {
     await this.Gpage.locator("//lightning-button[@class='middleButton']/button[@name='New']").click();
   }
